@@ -1,0 +1,14 @@
+{
+  "name": "Task Mini Lecture",
+  "version": "1",
+  "enabled": true,
+  "description": "Explains task concepts in a beginner-friendly way before execution",
+  "when": {
+    "type": "preTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "If .kirolearn exists in the current spec directory, read .kiro/learn/task-lecture-guide.md and follow it. If the spec's design.md lists Python in its tech stack, also read .kiro/learn/python-guide.md and follow it."
+  },
+  "shortName": "task-lecture"
+}
