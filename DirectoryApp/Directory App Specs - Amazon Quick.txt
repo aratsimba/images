@@ -1,0 +1,33 @@
+Create a directory application that manages person and company biographical information. In addition, the application meets the following requirements:
+
+1) For a person, the application keeps tracks of spouse and child relationships. If they are part of the same household, they will have the same primary address.
+2) For a company, the application keeps track of its contact persons.
+3) For an address, the application will look-up and auto-suggest valid addresses in the USA.
+4) The application provides a unified search capability that searches the persons and companies in the directory. This capabality offers an auto-suggest and auto-fill feature as the user enters partial letters in the search field.
+
+-----
+
+Modify the app to implement the following features:
+
+1) A person or company can have multiple addresses. One of them must be a primary address.
+
+2) A person or company can have multiple phone numbers. One of them must be a primary phone number. Format phone numbers to meet the E.164 standard.
+
+3) A person or company can have multiple email addresses. One of them must be a primary email address.
+
+----
+
+Suggested Enhancement 1:
+
+When creating or editing a person or company, automatically check for potential duplicates by comparing names, primary emails, or primary phone numbers against existing entries. If matches are found, show a warning banner listing the suspected duplicates with links to view them before saving. This would help prevent accidental duplicate entries and keep the directory clean as it grows.
+
+----
+
+Suggested Enhancement 2:
+
+Add the ability to export all directory entries to a CSV file and bulk-import entries from a CSV upload. This would streamline data migration, enable offline editing, and provide a simple backup/restore mechanism for the directory.
+
+-----
+
+Add a toolbar above the list view with sort options (by name, date added, type) and filter toggles (show only persons, only companies, or by industry). This would make navigating large directories much faster and more intuitive.
+

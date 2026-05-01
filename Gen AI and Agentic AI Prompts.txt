@@ -1,0 +1,744 @@
+## Master prompts for Kiro
+
+Test the assessment for at the URL below by following these instructions:
+
+- Run a first test that results in failure. Then go back and review the feedback for each question to make sure it displays correctly.
+- Run a second test that results in success.
+- Create a summary of the tests and save it in a file in the folder named "Assessment Tests"
+
+URL: https://360.articulate.com/review/content/d065970f-0478-4344-8817-42184983d4f5/review
+----
+Save our conversation history in the "Cline Conversations" folder. Make sure to save the prompt and the response.
+
+----
+
+## Master prompts for Cline
+
+Analyze the <fileName> file (or document) against the ACI Style Guide standards.
+
+
+Apply the standards in the ACI Style Guide to content creation.
+
+## Common prompts for Cline
+
+Compare the knowledge check questions in the following assessment files. Identify and describe any differences. Save the result in a comparison file.
+
+DF4-week6-assessment.docx
+DF4-week6-assessment-from-SL.docx
+
+------
+Compare the knowledge check questions in the following assessment files. Identify and describe any differences. In particular, identify which StoryLine file (with a -SL suffix) matches which source file (No -SL suffix). Save the result in a comparison file.
+2024-11-04 - Week 10-Building LLMs LangChains.docx
+2024-11-06 - AID_week9_Introduction_to_LangChain_sum_assessment.docx
+2025-04-25 - Building_LLM_Apps-part2_assessment -SL .docx
+2025-04-25 - Building_LLM_Apps-Part3 - SL.docx
+2025-08-26 - 09_getting-started-with-langchain-Assessment - SL.docx
+
+------
+Save conversation history to the "Cline Conversations" folder in a format similar to the "Conversation Summary" files.
+
+----
+The files in the "Original Content" folder contains the modules for a course named "Developer Intermediate 1". The file named "Developer Intermediate 1 – Course Overview Script.docx" contains the script for a video that introduces the course. Analyze the course modules and then verify that the script accurately reflects the course content and is comprehensive at a summary level. Save your results in a file.
+
+---
+
+The "Module Overview" lesson in each of the modules currently contains  a placeholder template with an instruction and an example. For each module, create an overview that follows the instruction and format of the template and accurately reflects the content of the module. Make sure to follow ACI style standards in generating the overview and make it suitable for a beginner level developer. 
+
+----
+
+Create new versions of the module overviews with the following changes:
+- To reduce repetitiveness, vary how the welcome paragraph of some of the modules start. Specifically, do not start them with questions. Instead, for example, start them with a transition statement from the previous module.
+- Limit the number of bullets in the "You will complete the following activities" section to no more than 7, focusing on the most important activities. Keep a bullet that mentions a lab if it is present.
+
+------
+Module 11 contains a "Course Complete!" lesson that currently contains a placeholder template and is incomplete. Complete this lesson following the instruction and format of the template so that it accurately reflects the content of the entire course. Make sure to follow ACI style standards in generating the overview and make it suitable for a beginner level developer. 
+
+------
+The files in the "Original Content" folder represents a module in an AI for Developers course. Analyze each module and perform the following:
+- Verify the content is technically correct and accurate. In particular, identify AWS services and features that are out-of-date and suggest content to bring them up-to-date.
+- Identify new relevant AWS service features that are missing, particularly based on the announcements from the re:Invent 2025 conference.
+- Verify that the content aligns with ACI standards.
+- Provide an estimate of how much time is required to modify the content.
+
+Save the results of your analysis to a file in the "Analysis Results" folder.
+
+Repeat your analysis using the following additional resource for re:Invent 2026 new features. Identify where you are using this resource in the analysis.
+https://aws.highspot.com/items/6931fb74de6bbe926130b431#1
+
+-> Needed to add AWS re-Invent 2025 External Cheat Sheet.docx to the workspace.
+
+--
+The files in the "Original Content" folder represent modules in an AI for Developers course developed in Rise. The order of the modules in the course and the outline for each module (sections and lessons) are defined in the "AI for Developers Syllabus.pdf" file. Analyze each module and perform the following:
+- Verify the content is technically correct and accurate. In particular, identify AWS services and features that are out-of-date and suggest content to bring them up-to-date. Especially, highlight any updates related to Amazon Bedrock, Amazon Q Developer, Amazon Q Business, Amazon Quick Suite, and Amazon Nova.
+- Identify new relevant AWS service features that are missing, particularly based on the announcements from the re:Invent 2025 conference. In addition to searching internal resources, use the information in the "AWS re-Invent 2025 External Cheat Sheet.docx" as a reference source.
+- Verify that the content aligns with ACI standards.
+- Verify if there are any open SIM tickets for the module. The list of open tickets and their links are provided in the "AID Tickets.pdf" file. For each ticket associated with the module, analyze the relevancy and benefit of the request, determine the impact of resolving the issue, and describe the recommended changes.
+- Provide an estimate of how much time is required to modify the content. Explain what standard you used to base the estimates.
+- Save the results of the analysis to a file in the "Analysis Results" folder. Create a new version of the file every time you update it.
+
+Response:
+
+Note: Modules 4-11 PDF files exceeded the 4.5MB size limit for detailed content extraction. The analysis for these modules is based on module titles, open tickets, and re:Invent 2025 feature mapping. For complete analysis, these files should be converted to text format or split into smaller segments.
+
+Prompt:
+
+I've converted the PDF files for Modules 4-11 to Word. These files are smaller in size than the PDFs. Can you complete the analysis using the Word files?
+
+Prompt:
+The analysis results for Modules 4-6 in v2 of the report are more detailed than in the FINAL version of the report. The v2 information is more helpful. Can you provide a similar level of detail for Modules 1-3 and Modules 7-11?
+
+Prompt:
+Does Amazon Quick Suite need to be mentioned to bring the content up-to-date? In particular, the integration of Quick Suite with Amazon Q Business. If so, which module should modified?
+
+Response:
+Based on my review of the re:Invent 2025 cheat sheet, I do not see specific new announcements for Amazon QuickSight (I assume you meant QuickSight, not "Quick Suite"). The cheat sheet doesn't include QuickSight-specific re:Invent 2025 launches.
+
+Prompt:
+No, I did mean Amazon Quick Suite. In fact, Amazon Quick Suite is the replacement for Amazon Quick Sight.
+
+Prompt:
+In the analysis report, can you move the detailed changes related to Amazon Quick Suite to the modules that are affected (Modules 2, 4, and 7)? Also move the Overview and "What is Amazon Quick Suite?" section to Module 2 
+
+In the analysis report, can you integrate the sections in "CRITICAL UPDATE: Amazon Quick Suite (Replaces QuickSight)" to the modules that are affected (Modules 2, 4, and 7)? Move the Overview and "What is Amazon Quick Suite?" section to Module 2. Update the time estimates for each affected module accordingly.
+
+------
+For Module 1, create a detailed design document (DDD) that describes in detail the changes required to implement the updates suggested in the latest analysis results. Follow the guidelines the "AID Build Requirements.docx" file to create the DDD, and save the DDD in the "Detailed Design Documents" folder.
+
+
+---
+You created the "Module 08 - DDD - Building LLM Apps with RAG.md" file as a detailed design document that describes in detail the changes required to implement the updates for Module 8 suggested in the latest AID course analysis document. Revise the DDD so that it includes only the detailed changes to implement the following scoping priorities:
+ 
+- Priority 1: Correcting inaccuracies and bringing the content current (ex. Code that doesn't work, videos that are outdated, models that are now older or unavailable, Bedrock changes)
+
+- Priority 2: Introduce Amazon Quick Suite. In particular, explain how Amazon Quick Suite integrates with and extends Amazon Q Business. If Amazon Quick Suite or Amazon Q Business is not part of the learning objectives for the module, ignore this priority.
+
+Save the revised DDD in a new file in the "Prioritized DDDs" folder.
+
+---
+Similar to what you did for Module 8, revise the DDD for Module 9 so that it includes only the detailed changes to implement the following scoping priority: Correcting inaccuracies and bringing the content current (ex. Code that doesn't work, videos that are outdated, models that are now older or unavailable, Bedrock changes)
+
+Remember to follow the guidelines the "AID Build Requirements.docx" file to create the DDD.
+
+Save the revised DDD in a new file in the "Prioritized DDDs" folder.
+
+------
+Draw a diagram that illustrates how you use .clinerules, the "Reference Resources" folder, and Builder MCP to analyze the course content in this project. Provide an explanation of the diagram.
+
+---
+Review the knowledge check questions in the "Getting Started with LangChain Assessment - v4.docx" file. Verify the following:
+1) The questions, correct answer(s), and feedback are technically correct and accurate. Make sure there is no mention of deprecated features. 
+2) The questions, correct answer(s), and feedback conform to ACI style standards. In particular, confirm that feedback follows the appropriate format "The correct response is ..." and "The other options are incorrect for the following reasons ...".
+3) There are no duplicate questions.
+4) The answers to the questions are covered in the Rise module in the file "aid-getting-started-with-lang-chainfor-tca-id-review.pdf". Identify which lesson covers each question.
+Save the results of your analysis in a file.
+
+----
+For Question 15, suggest a better distractor than "Amazon DynamoDB". Provide a concise feedback for the replacement also.
+
+----
+Create 5 additional questions that conform to the format of the assessment based on the following objective or question bank (QB) distribution:
+- 2 questions for QB 3.0
+- 1 question for QB 4.0
+- 2 questions for QB 5.0
+Make sure not to duplicate existing questions.
+
+----
+
+Review the knowledge check questions in the "DI2 Course Assessment.docx" file. Verify the following:
+1) The questions, correct answer(s), and feedback are technically correct and accurate.
+2) The questions, correct answer(s), and feedback conform to ACI style standards. In particular, confirm that feedback follows the appropriate format "The correct response is ..." and "The other options are incorrect for the following reasons ...".
+3) There are no duplicate questions.
+Save the results in a file.
+
+
+The are actually 86 questions in the knowledge check. Did you analyze all of them?
+
+---
+
+##Amazon Q Prompts
+
+1. Provide a 2 sentence explanation for why the correct answers are correct and the distractors are not for the following knowledge check question. Make the explanation understandable by a beginning developer:
+
+Question: Which services can developers use to examine things like latency time for AWS Lambda functions? (Select TWO.)
+
+Correct answers: Amazon CloudWatch, AWS X-Ray
+Distractors: AWS SAM, Amazon DynamoDB, AWS CloudTrail
+
+2. Which feature of x-ray is described by this sentence:
+
+X-Ray captures Lambda errors, such as timeouts and exceptions, when they occur. These errors are traced and can be used to help pinpoint Lambda failure points.
+
+##Amazon Quick Suite Prompts
+
+0.Save the response in a markdown file that I can copy and paste.
+  Then copy and paste.
+
+x. Explain the relationships between to Amazon Q Developer, Amazon Q Business, and Amazon Quick Suite based on the updates announced in re:Invent 2025.
+
+
+1. Rewrite the following sentence for better clarity and technical accuracy. Make sure the resulting sentence has no more than 25 words.
+
+When using Lambda functions, X-Ray can help with the tracing and the execution of them, including cold starts, execution time, and interactions with external services.
+
+2. Split the following long sentence into 2 smaller ones that don't exceed 25 words. Make sure to retain the meaning of the original sentence.
+
+In this lesson, you will learn how to use X-Ray to help AnyCompany Pet Shelter troubleshoot the slow response times and occasional application errors that customers have been reporting. 
+
+Response:
+
+Here are two shorter sentences that retain the original meaning (each under 25 words):
+
+**Sentence 1 (16 words):**
+In this lesson, you will learn how to use X-Ray to troubleshoot AnyCompany Pet Shelter's application issues.
+
+**Sentence 2 (13 words):**
+Customers have reported slow response times and occasional errors that need investigation.
+
+**Key improvements:**
+- Split into two focused sentences (16 and 13 words respectively)
+- First sentence introduces the learning objective and tool
+- Second sentence specifies the problems being addressed
+- Maintained all essential information from the original 32-word sentence
+- Improved readability while preserving technical accuracy
+
+**Would you like me to review more sentences from your observability documentation, or would you like a different approach to splitting this sentence?**
+
+
+3. 
+Review the course in adding-a-reporting-microservice-v1.pdf. Verify that the first and subsequent use of all AWS service names are correct.
+Better with Quick Suite
+
+----
+
+Provide 3 distractors for the following knowledge check question. Include a 2 sentence explanation for why each distractor is incorrect. Make each sentence no longer than 25 words and make the explanation understandable by a beginner developer.
+
+What can cause long latency delays in AWS Lambda functions?
+
+---
+
+Based on the information in trace-analyzsis2.md, provide a 3 sentence summary of the timing relationships between the Lambda, Lambda Service, and Lambda Function segments. Make each sentence no longer than 25 words and make the explanation understandable by a beginner developer.
+
+---
+
+Analyze the knowledge check questions in the "DF4 summative assessment week 7.docx" file. Verify it for technical accuracy and that the content is not out-of-date. For each question, check that the correct answer is correct, and that the distractors are incorrect. Also check that the feedback for each option is accurate, clear, and understandable by a beginner developer. For any recommended changes, provide the suggested replacement text. Create a report of your findings and save it in a file named DI2_Observability_and_Tracing_Tech_Analysis.md.
+
+---
+Review the contents of the file "DF4 summative assessment week 7.docx" for technical accuracy. Also verify that the content is not out-of-date. Create a report of your findings and save it in a file named DI2_Observability_and_Tracing_Tech_Analysis.md.
+
+---
+Provide a 2 sentence description of the following properties of a state machine resource definition in an AWS SAM template file. Make each sentence no longer than 25 words and make the description understandable by a beginner developer.
+
+- DefinitionUri
+- Role
+- DefinitionSubstitutions
+
+---
+
+Provide a 2 sentence description for each of the state elements in the report_generation_steps.asl.json file. Make each sentence no longer than 25 words and make the description understandable by a beginner developer.
+
+---
+Provide a 2 sentence description for each resource definition and each property in the SNS_topic_definition.yaml file. Make each sentence no longer than 25 words and make the description understandable by a beginner developer.
+
+---
+Provide a 2 sentence description for the SendSNSEmail state definition and each of its properties in report_generation_publish.asl.json file. Make each sentence no longer than 25 words and make the description understandable by a beginner developer.
+
+---
+Provide a 2 sentence description for SNSTopicArn the SNS_report_Topic_ARN.yaml file. Make each sentence no longer than 25 words and make the description understandable by a beginner developer.
+
+---
+Provide a 2 sentence description for CreateReportLambda and each of its properties the Lambda_report_trigger.yaml file. Make each sentence no longer than 25 words and make the description understandable by a beginner developer.
+
+---
+Prompt for Quick Suite:
+
+Is the following sentence acceptable based on the AWS Style Guide:
+The fan-out pattern in Amazon SNS allows straightforward distribution of a single report to multiple recipients.
+
+
+---
+Prompt:
+
+Provide a 3 sentence description for the code snippet in the react_client_to_Invoke_report_generation.jsx file. Make each sentence no longer than 25 words and make the description understandable by a beginner developer.
+
+Response from Cline (Preferred):
+
+Here is a 3-sentence description of the code in `react_client_to_invoke_report_generation.jsx`:
+
+1. This function sends a request to a server to create a report when triggered by the user.
+2. If the report is created successfully, it shows an alert saying the report was sent to email.
+3. If something goes wrong during the request, an error message is logged to the browser console.
+
+Response from Q:
+
+Here's a 3-sentence description of the React code:
+
+Sentence 1:
+This function sends an HTTP POST request to the API Gateway endpoint to trigger report generation.
+
+Sentence 2:
+If the request succeeds, it logs success messages and shows an alert telling users the report was emailed.
+
+Sentence 3:
+If the request fails, it catches the error and logs an error message to the browser console.
+
+Updated response from Cline when asked: What is axios.post()?
+
+Here is an updated 3-sentence description of the code in `react_client_to_invoke_report_generation.jsx`:
+
+1. This function uses `axios.post()` to send data to a server—axios is a popular library for making web requests.
+2. When the server successfully creates the report, an alert notifies the user it was sent to their email.
+3. If the request fails, the error is logged to the browser console so developers can troubleshoot the issue.
+
+---
+Prompt for Cline:
+
+Provide a 3 sentence description for the code snippet in the react_client_generate_report_button.jsx file. Make each sentence no longer than 25 words and make the description understandable by a beginner developer.
+
+Response:
+
+Here is a 3-sentence description of the code in `react_client_generate_report_button.jsx`:
+
+1. This code creates a green button labeled "Generate Report" that users can click on the webpage.
+2. When clicked, the button runs a function called `handleGenerateReport` which triggers the report creation process.
+3. The `style` object applies CSS directly to the button, controlling its colors, padding, and rounded corners.
+
+---
+Prompt for Quick Suite:
+
+What is the internal name, extra long name, short name for Amazon SNS?
+
+Based on the AWS Style Guide and internal naming conventions, here are the naming details for Amazon SNS:
+
+Internal name: SNS (or Simple Notification Service)
+
+Extra long name: Amazon Simple Notification Service (Amazon SNS)
+
+Short name: SNS
+
+According to the AWS naming conventions :[1][2][3]
+• The extra-long name "Amazon Simple Notification Service (Amazon SNS)" should be used on first mention in most marketing content, technical documentation, and guide names
+• The short name "SNS" should be used after the full name on second and subsequent uses
+• The brand prefix "Amazon" is associated with this service
+• The internal/RIP (Region Information Provider) name is "sns"
+
+The naming pattern follows AWS's standard convention where the full service name includes the brand prefix (Amazon), the descriptive service name (Simple Notification Service), and the abbreviated form in parentheses on first use, with subsequent references using just the short name.
+
+Would you like to know the naming conventions for any other AWS services, or do you need help with anything else related to AWS Style Guide requirements?
+
+Sources:
+
+[1] Nomen
+https://w.amazon.com/bin/view/AWS_TCX/Content-IQ/Nomen/
+
+[2] AWS offering names - products, services, features
+https://w.amazon.com/bin/view/AWSDocs/service-names/
+
+[3] service-names/SectionContent
+https://w.amazon.com/bin/view/AWSDocs/service-names/SectionContent/
+
+---
+Prompt for Cline:
+
+What is the text in the curl_report_endpoint_output.jpg file?
+
+{"executionArn": "arn:aws:states:us-west-2:123456789012:execution:ReportGenerationStateMachine-kjKjsdiUndc:489382b-f4b1-4bc6-8680-2ed776b81310"}
+
+**Text in curl_report_endpoint_outuput.jpg:**
+
+The image shows a terminal/command line output displaying a JSON response:
+
+```json
+{"executionArn": "arn:aws:states:us-west-2:123456789012:execution:ReportGenerationStateMachine-kjKjsdiUndc:489382b-f4b1-4bc6-8680-2ed776b81310"}
+```
+
+**What this shows:**
+
+This is the response from calling the `create_report.py` Lambda function via `curl` (or similar HTTP client). It demonstrates that:
+
+1. The API endpoint was successfully invoked
+2. The Lambda triggered the Step Functions state machine named `ReportGenerationStateMachine-kjKjsdiUndc`
+3. The execution ID `489382b-f4b1-4bc6-8680-2ed776b81310` was generated for tracking this specific workflow run
+4. The response matches exactly what the Lambda returns in its `body`: `json.dumps({'executionArn': response['executionArn']})`
+
+This execution ARN can be used to monitor the state machine's progress or retrieve its results.
+
+---
+
+Prompt for Cline:
+
+Are the following console navigation steps correct and accurate?
+
+Provide a PDF containing the steps.
+
+-- 
+Prompt:
+
+Provide a 2 sentence explanation for the correct answer and each distractor for the following knowledge check question. Make each sentence no longer than 25 words and make the explanation understandable by a beginner developer.
+
+Question:
+The pet shelter client's development team has set up an Amazon API Gateway endpoint to trigger their AWS Step Functions state machine. They want to ensure that they follow best practices for setting up the endpoint.
+
+Which statement best describes why POST is the best HTTP verb to choose for the create-report endpoint?
+
+Correct answer:
+The action creates or initiates a new resource or process.
+
+Distractors:
+- The action is retrieving data idempotently.
+- The action is updating existing resources in generating the report.
+- The action removes resources from the system.
+
+Response from Cline:
+
+__Correct Answer: "The action creates or initiates a new resource or process."__
+
+1. POST is the standard HTTP verb used when you want to create something new, like generating a fresh report.
+2. The create-report endpoint starts a new process, making POST the appropriate choice according to REST API conventions.
+
+__Distractor: "The action is retrieving data idempotently."__
+
+1. This describes GET, which is used to read or fetch existing data without changing anything on the server.
+2. Creating a report is not retrieval—it initiates a new process, so GET would be incorrect here.
+
+__Distractor: "The action is updating existing resources in generating the report."__
+
+1. This describes PUT or PATCH, which modify data that already exists rather than creating something entirely new.
+2. The endpoint creates a new report each time; it does not update an existing report resource.
+
+__Distractor: "The action removes resources from the system."__
+
+1. This describes DELETE, which is used to remove or destroy existing resources from the server.
+2. Generating a report adds new output rather than deleting anything, so DELETE does not apply here.
+
+Response from Q:
+
+Here are 2-sentence explanations for each option:
+
+Correct Answer: "The action creates or initiates a new resource or process."
+POST is designed for creating new things or starting processes on the server. When you trigger report generation, you're starting a new workflow execution, which is exactly what POST should do.
+
+Distractor 1: "The action is retrieving data idempotently."
+This describes GET requests, which fetch existing data without changing anything on the server. GET operations can be called multiple times safely and always return the same result.
+
+Distractor 2: "The action is updating existing resources in generating the report."
+This describes PUT or PATCH requests, which modify data that already exists. These verbs are for changing existing records, not starting new processes like report generation.
+
+Distractor 3: "The action removes resources from the system."
+This describes DELETE requests, which remove or destroy existing data from the server. DELETE is the opposite of creation - it eliminates resources rather than generating new ones.
+
+---
+Prompt:
+
+Are you familiar with the ACI Style Guide standards?
+
+Response from Cline:
+
+Yes, I'm familiar with the ACI Style Guide standards. Based on the compliance report in your working directory, the ACI Style Guide encompasses several key standards:
+
+**1. Sentence Length Standards**
+- Maximum 30 words per sentence
+- Optimal range: 15-20 words per sentence
+
+**2. AWS Service Naming Conventions**
+- Use full name (e.g., "Amazon CloudWatch", "AWS Lambda") on first mention
+- Use short name (e.g., "CloudWatch", "Lambda") on subsequent mentions
+- Maintain consistency throughout documents
+
+**3. Lab Writing Standards**
+- Consistent heading hierarchy
+- Proper code block formatting with language specification
+- Standardized activity instructions (numbered steps, prerequisites, success criteria)
+- Accessibility descriptions for images and interactive elements
+
+**4. Curriculum Quality Checklist (CQC)**
+- Explicit, measurable learning objectives
+- Accessibility compliance (alt text, keyboard navigation descriptions)
+- Technical accuracy and currency
+- Assessment alignment with objectives
+
+**5. General Style Guidelines**
+- Active voice preferred over passive voice
+- Clear pronoun references
+- Consistent terminology and hyphenation
+- Concise language (avoid wordiness)
+- Professional tone (avoid informal language)
+
+**6. Technical Documentation Standards**
+- Prerequisites sections
+- Troubleshooting guidance
+- Version and compatibility information
+- Resource cleanup instructions
+
+The compliance report in ACI_Style_Guide_Compliance_Report.md demonstrates application of these standards to the observability and tracing training document.
+
+Is there a specific aspect of the ACI Style Guide you'd like to explore, or would you like me to help apply these standards to a document?
+
+---
+
+Prompt: What is the source of the ACI Style Guide?
+
+Response from Cline:
+
+The **ACI Style Guide** is published by **AWS Training and Certification (AWS T&C)** specifically for the **AWS Cloud Institute (ACI)** program. 
+
+**Source Location**: https://w.amazon.com/bin/view/AWS_Training_and_Certification/AWS_Cloud_Institute/Curriculum_%26_Delivery/StyleGuide/
+
+**Primary Owner**: padawan-wikiadmins (LDAP)
+
+The ACI Style Guide is maintained by the ACI editorial team and serves as an **addendum** to these foundational resources:
+
+1. **AWS Assessment Style Guide** - Assessment writing standards
+2. **AWS Lab Writing Guidelines** - Lab development processes and standards
+3. **AWS offering names (products, services, features)** - Service naming conventions
+4. **AWS Style Guide** - Core AWS documentation style standards
+5. **AWS T&C Curriculum Quality Checklist (CQC)** - Quality assurance standards
+6. **Chicago Manual of Style** - General editorial standards (external)
+7. **Merriam-Webster's dictionary** - Spelling and usage reference (external)
+
+The guide contains an alphabetical list of ACI-specific terms, phrases, and formats that appear frequently in AWS Cloud Institute content but are not covered in the other AWS resources. Contributors can submit feedback and suggestions through the **ACI Style Guide Suggestions Quip** document.
+
+---
+
+Prompt: Are you familiar with all the standard defined in the resources referenced by the ACI Style Guide?
+
+Response from Cline:
+
+I have reviewed the ACI Style Guide and its referenced resources. Here's my familiarity with the standards:
+
+## Resources I've Reviewed:
+
+**1. ACI Style Guide** (Primary source)
+- Location: https://w.amazon.com/bin/view/AWS_Training_and_Certification/AWS_Cloud_Institute/Curriculum_%26_Delivery/StyleGuide/
+- Contains: Alphabetical terminology guide (A-Z) for ACI-specific content, including terms like "backend", "frontend", "hyperparameter", "lifecycle", "real-time", ML/AI terminology, and AWS-specific conventions
+
+**2. AWS Assessment Style Guide**
+- Item anatomy (stem, responses, key, distractors)
+- Item types (multiple choice, multiple response, formative vs summative)
+- Formatting rules (stem, scenario, question, response options, feedback)
+- Voice, global audience considerations, service names, terminology, acronyms, capitalization, numbers, punctuation
+
+**3. AWS Lab Writing Guidelines**
+- Complete lab structure (headings, tasks, subtasks, objectives, conclusions)
+- Markdown formatting standards
+- Code block specifications
+- Image/diagram requirements with accessibility
+- Icon key standards
+- Include statements
+
+**4. AWS T&C Curriculum Quality Checklist (CQC)**
+- Accessibility requirements
+- Acronyms/abbreviations
+- Audio/video requirements
+- Capitalization, code examples
+- Graphics, inclusive language
+- Legal requirements, links, lists
+- Procedures and labs
+- Voice and tone
+
+**5. AWS offering names** (redirects to AWSDocs/service-names)
+- First use vs subsequent use rules for service names
+
+**6. External resources referenced:**
+- AWS Style Guide (alpha.www.docs.aws.a2z.com)
+- Chicago Manual of Style
+- Merriam-Webster's dictionary
+
+## Standards I Can Apply:
+- Service naming conventions (first/subsequent mention)
+- Assessment item writing
+- Lab guide formatting and structure
+- Code block formatting
+- Accessibility requirements
+- Terminology consistency
+- Voice and tone guidelines
+- Punctuation and capitalization rules
+
+I can help analyze documents against these standards or apply them to content creation.
+
+---
+
+Provide 3-4 sentence paragraph that describes multimodal embedding models, particularly, how they differ from text embedding models. Make each sentence no longer than 25 words and make the explanation understandable by a beginner developer.
+
+---
+
+Create 2 new summary lessons for the "Retrieval Augmented Generation" and "Engaging with Amazon Bedrock Knowledge Bases"  sections of the "aid-m08-building-llm-apps-with-rag-draft.pdf" module. Make sure to adhere to ACI style standards and use the following additional guidelines:
+
+- Start the summary with the phrase: "In this topic, you explored the following concepts:"
+- Use a bullet list to provide brief summaries of the key takeaways.
+- Be concise.
+- Do not create more than 10 bullets. 7 is the ideal maximum.
+Create 2 new summary lessons for the "Retrieval Augmented Generation" and "Engaging with Amazon Bedrock Knowledge Bases"  sections of the "aid-m08-building-llm-apps-with-rag-draft.pdf" module. Make sure to adhere to ACI style standards and use the following additional guidelines:
+
+- Start the summary with the phrase: "In this topic, you explored the following concepts:"
+- Use a bullet list to provide brief summaries of the key takeaways.
+- Be concise.
+- Do not create more than 10 bullets. 7 is the ideal maximum.
+Save the summaries in files in the "Updated Modules" folder.
+
+---
+Create a new assessment question for module 8 that covers a topic in the "[REVIEW] Amazon Bedrock Knowledge Bases" lesson in the "aid-m08-building-llm-apps-with-rag-draft.pdf" module. Make sure the question does not duplicate an existing question in the assessment.
+
+---
+Quick Suite:
+
+Review the following assessment question that references in the "[REVIEW] Amazon Bedrock Knowledge Bases" lesson in the "aid-m08-building-llm-apps-with-rag-draft.pdf" module. Is is technically accurate, and does it conform to the ACI style standards?
+
+A developer is creating a knowledge base in Amazon Bedrock and needs to configure the vector store. Whether the developer chooses to quick-create a new vector store or use an existing one, what must the developer specify?
+
+Response Options:
+
+Option	Correct	Text
+Option 1	X	Vector store type
+Option 2		Embedding model version
+Option 3		Data source location
+Option 4		Chunking strategy
+Feedback:
+
+The correct response is Vector store type. When creating a vector store for a knowledge base in the Amazon Bedrock console, whether choosing to quick-create a new vector store or use an existing one, the developer must specify the type of vector store. Available options include Amazon OpenSearch Serverless, Amazon Aurora PostgreSQL Serverless, Amazon Neptune Analytics, or Amazon S3 Vectors.
+
+The other options are incorrect for the following reasons:
+
+Embedding model version is selected separately when configuring the knowledge base. It is not a requirement specific to creating the vector store.
+Data source location is configured as part of the data source settings. It is not a requirement when creating or selecting the vector store.
+Chunking strategy is configured when setting up the data source. It is not a requirement when creating or selecting the vector store.
+
+---
+
+Quick
+
+I'm looking for a best practices architecture recommendation for designing a search function in a web or mobile UI that has a suggestion or auto-complete feature. 
+
+yes, provide more information on how to implement this common pattern. Can you also draw a diagram of this architecture?
+
+----
+
+The file named "01 - Introduction to Linux.pdf" is a module that introduces Linux. It contains a lesson named "Amazon Q Developer for Command Line Work". Create a new version of the lesson that updates Amazon Q Developer CLI to Kiro CLI. 
+
+---
+
+My current workspace contains folders for each course in the ACI training curriculum. Each folder contains a PDF file for each module in a course. Review all the PDFs for a course and identify all the videos and labs for that course. Create a report that lists all the video file names and the lab links for each course. Save the report in a file in a folder named "Analysis Results".
+
+---
+
+Kiro-cli Prompts
+****************
+
+---
+Clone the codecommit repository identified SPL-PW-100-AIDV01-1 in the awsu account (awsu@SPL-PW-100-AIDV01-1).
+
+---
+
+Clone the codecommit repositories for each course identified Appendix A of the "/Users/awsalain/Documents/kiro/ACI Workspace/Analysis Results/ACI_Videos_and_Labs_Report.md" file. Use the following guidelines:
+
+- All repositories are in the awsu account.
+- A repository name starts with "SPL-".
+- Create a separate folder for each course and save each cloned repository in its course folder. For example, save all the repositories for the "AI Development (AID)" course in a folder named "AID".
+
+---
+
+Find all references to the aws-tc-largeobjects S3 bucket in the course folders and identify the repository names that they reference. Save these names in a file along with their course names.
+
+---
+
+The file named "s3_largeobjects_references.md" contains a list of S3 buckets that contain lab assets for different courses. Download the objects identified by the unique S3 path prefixes into the "large-objects" folder. Within the folder separate each object by course. For example create a sub-folder named "AID" for objects referenced in the "AID" course, and another folder called "CF2" for objects referenced in the "CF2" course.
+
+----
+
+
+Terminal
+********
+
+mkdir -p pictures/{AID,CF1,CF2,CO1,CO2,DF,DI1,DI2,ICF,PAI}
+
+----
+
+Cline
+*****
+
+In the AID, CFI1, and CF2 folders and their subfolders, remove all .git folders.
+
+In the AID, CFI1, and CF2 folders and their subfolders, remove all folders named "PIL" or that contain "pillow" in their name.
+
+In the AID, CFI1, and CF2 folders and their subfolders, remove all files with a .drawio extension.
+
+In the DI1 folder and its subfolders, remove the following files:
+- django-end-template-lab-20240201.tar.gz
+- django-end-admin.tar.gz
+- Django-end-admin.tar.gz.older
+- "Cloud9-Lab-IDE (6).tar.gz"
+
+In the DI1 folder, remove all files with a tar.gz extension that are larger than 50 MB.
+
+Successfully removed 2 tar.gz files larger than 50MB from the DI1 folder:
+
+- `Cloud9-Lab-IDE.tar.gz` (165MB)
+- `uploaded.tar.gz` (55MB)
+
+Both were located in `DI1/SPL-PW-300-DVF304-1/nopublish/archive/nov8-working-order-placement/`. Verification confirmed no tar.gz files over 50MB remain.
+
+---
+
+Kiro
+****
+
+Save our conversation history for running Task 1 in a file that identifies the Task number.
+
+Save the conversation history for the last completed task in a file that identifies the task number.
+
+Can you save the Task mini lectures, game plans, and quick checks in a separate file for each completed task so far?
+
+Save the Task mini lectures, game plans, and quick checks in a separate file for the last completed task.
+
+----
+Quick
+*****
+
+Analyze the attached requirements document and answer the following questions:
+
+Does it cover all the key concepts for this topic?
+Are there missing requirements?
+Are user stories clear and well-scoped? ("As a [role], I want [goal], so that [benefit]")
+Are acceptance criteria specific and testable? (EARS notation: WHEN/SHALL/IF/THEN)
+Are technical terms properly defined? Are definitions accurate?
+Are AWS service names, features, and technical details correct?
+
+Create a document that captures your analysis.
+
+---
+
+Analyze the attached design document and answer the following questions:
+
+Is the architecture diagram (Mermaid) clear and correct? Does it show the right AWS services?
+Are components well-defined with clear interfaces? (5-8 components expected)
+Are data model definitions (TYPE) accurate and complete?
+Are error scenarios identified with appropriate handling strategies?
+Can a developer actually implement this design in a reasonable time?
+Does the design follow AWS Well-Architected best practices?
+Is it a "minimum implementable unit"? Not too broad, not too trivial?
+
+Create a document that captures your analysis.
+
+---
+
+Analyze the attached tasks document and answer the following questions:
+
+Are tasks in a logical sequence? Do prerequisites come first?
+Are tasks appropriately sized? Not too big (unclear), not too small (trivial)?
+Does each task reference back to requirements?
+Are Prerequisites, Checkpoint, and Cleanup tasks included?
+Can a developer follow the tasks step-by-step without ambiguity?
+Are the tasks achievable in Kiro IDE? Do they produce a working deliverable?
+
+Create a document that captures your analysis.
+
+---
+
+Save the coverage assessment / analysis results in a Markdown file that I can download.
+
+---
+
+Quick
+*****
+
+I need to implement an auto-suggest/auto-complete functionality in my application. When the user starts to enter letters in a name field, I want the application to automatically search and list matches. What is the best way to architect this requirements, and which services and components do I need?
+
