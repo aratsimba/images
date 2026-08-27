@@ -1,9 +1,0 @@
-#,Screen,Type,✓
-1,Dashboard/Home,Web,✓
-2,Calendar View (Monthly),Web,✓
-3,Event Detail Flyout,Web,✓
-4,Volunteer Schedule,Web,✓
-5,Create/Edit Event Modal,Web,✓
-6,Home / Calendar / Event Detail,Mobile (3-up),✓
-7,My Schedule / Openings / Swap,Mobile (3-up),✓
-8,Create Event (Steps 1-4) + Notifications & Groups,Mobile (3-up),✓

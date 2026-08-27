@@ -1,8 +1,0 @@
-Metric,Target,Measurement
-API response (p95),< 300ms,CloudWatch
-Dashboard load (LCP),< 1.5s,Lighthouse
-Calendar render,< 800ms,Performance.now()
-Mobile cold start,< 2s,Flipper
-Push delivery,< 5s,End-to-end
-Database query (p95),< 50ms,RDS Insights
-Uptime,99.9%,Route 53
