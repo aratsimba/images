@@ -1,0 +1,4 @@
+File,Contents,Stats
+requirements.md,26 user stories with 100+ EARS acceptance criteria across 10 feature areas,"20,464 chars"
+design.md,"Architecture, tech stack, 15-table data model, API contracts, frontend/mobile architecture, security","15,340 chars"
+tasks.md,39 sequenced implementation tasks with dependencies and acceptance criteria across 6 sprints (12 weeks),"22,427 chars"

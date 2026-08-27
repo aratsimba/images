@@ -1,0 +1,10 @@
+Notification Type,Deep Link,Screen
+event_reminder,roca://events/{id},Event Detail
+volunteer_assigned,roca://serve/schedule,My Schedule
+swap_request,roca://serve/swaps,Swap Requests
+waitlist_promoted,roca://events/{id},Event Detail
+gap_alert,roca://serve/openings,Openings
+rsvp_confirmed,roca://events/{id},Event Detail
+schedule_change,roca://events/{id},Event Detail
+new_event,roca://events/{id},Event Detail
+prayer_update,roca://home,Home/Prayer

@@ -1,0 +1,8 @@
+GET /api/v1/events?start=2026-08-01&end=2026-08-31&campus=main&category=worship
+
+Response (200):
+{
+  "status": "success",
+  "data": [...events array with expanded recurrences...],
+  "meta": { "total": 24, "page": 1, "per_page": 50 }
+}

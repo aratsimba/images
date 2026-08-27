@@ -1,0 +1,17 @@
+| Entity | Key Relationships | Purpose |
+|--------|------------------|---------|
+| `organizations` | Parent of all entities | Multi-org/denomination support |
+| `campuses` | → organizations | Multi-site locations |
+| `rooms` | → campuses | Facility booking |
+| `members` | → organizations | People directory & auth |
+| `events` | → organizations, categories, campuses, rooms | Core calendar entries |
+| `event_categories` | → organizations | Color-coded groupings |
+| `event_registrations` | → events, members | RSVP tracking |
+| `liturgical_seasons` | → organizations | Seasonal context & theming |
+| `ministry_groups` | → organizations, campuses | Small groups & ministries |
+| `group_members` | → ministry_groups, members | Group roster |
+| `scripture_readings` | → organizations, events | Lectionary / daily readings |
+| `prayer_focuses` | → organizations | Weekly prayer themes |
+| `volunteer_roles` | → organizations | Role definitions |
+| `volunteer_assignments` | → events, volunteer_roles, members | Scheduling |
+| `notifications` | → organizations, events | Alerts & reminders |
