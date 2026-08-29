@@ -1,0 +1,514 @@
+DirectoryApp Prompts
+
+Terminal commands:
+------------------
+
+- The self-extracting shell script (`directory-app.sh`) recreates the full project structure
+- Run `bash directory-app.sh` to create a `directory-app/` folder with `src/`, `src/components/`, and all project files in their correct paths
+- Also includes `DEVLOG.md` in the export
+
+
+Quick
+-----
+
+Update the devlog with the latest conversation history so that I can export it.
+
+-------
+Modify the application to add the ability for a person, company, or household to upload an image (profile image) to use as the badge in list and detail views. This image replaces the default badge currently displayed in those views.
+
+=> v80
+
+-------
+
+Add an interactive circular crop overlay when uploading a profile image, allowing users to pan and zoom before confirming. This would give users more control over how their photo appears in the circular badge, rather than relying on automatic center-cropping which may cut off important parts of the image.
+
+=> v81
+
+-------
+
+Export the image file as a JSON file when you click "Export CSV". Two files are now exported: directory-export.csv and directory-images.json.
+
+=> v82
+
+-------
+
+Add an imageId column in directory-export.cvs to point a corresponding row in directory-images.json.
+
+=> v83, v84 (Update log for export)
+-------
+
+On the edit forms for person, company, and household, the profile image has a small red crescent in the top right corner of the circle. This is not part of the image and should not display. In the other views (list and details), the image shows correctly without this crescent.
+
+
+Fixed! The issue was that the red "remove photo" button (×) was positioned inside the circular container which has overflow: hidden. The container was clipping the button into a crescent shape.
+
+==> v85, v86 (Export log)
+
+
+-------
+Implement suggestion:
+
+Add pagination controls (e.g., 25/50/100 per page) to the list view with a total entry count indicator (e.g., "Showing 1–25 of 142 entries"). This would improve performance and usability as the directory grows, preventing the browser from rendering hundreds of cards simultaneously.
+
+=> v87
+
+-------
+
+Implement the same type of pagination on the Households list view.
+
+=> v88, v89 (Export log)
+
+-------
+Implement suggestion:
+
+Display a visual tree/graph showing parent-child and spouse relationships for a selected person, helping users quickly understand complex family structures at a glance.
+
+=> v90
+
+Enhance the current family tree to allow expanding nodes by clicking a "+" indicator, revealing grandparents, grandchildren, or extended family beyond the immediate relationships. This would enable navigating deep family structures without leaving the tree view.
+
+=> v91, v92 (Export log)
+
+-------
+
+Implement suggestion:
+
+Add expand/collapse toggles to each section in the detail view (Email, Phone, Addresses, Relationships, Family Tree, Household, Notes). Collapsed state would persist per-user, letting people hide sections they rarely need and focus on the information most relevant to them.
+
+
+=> v93, v94 (Export log)
+--------
+For all addresses, add a second address line field to capture such things as an apartment number, suite number, or floor number. Make this field optional.
+
+=> v95, v96 (Export log)
+-----
+
+Add a status field to persons to keep track of their status: active, deceased, archived, etc. Add a filter on the field.
+
+Core concept (recommended):
+
+Add a status field to each entry (e.g., "active" | "deceased" | "archived") rather than deleting records. This is the standard pattern for "soft delete" scenarios where historical data has value.
+
+=> v98
+----
+
+When you click "Export vCard" and you cancel out of it, the message "User declined file download" is displayed in a top banner and stays displayed all the time. Do not display this message.
+
+=> v99
+
+---
+
+In the Family Tree, display a visual indicator for a person who is deceased.
+
+==> v100
+
+---
+
+You indicated that you also added a "status" field for a company. I do not see the change. Please add the field for a company with an appropriate default value and relevant company state values. 
+
+==> v101
+
+----
+
+Can you re-design the filter functionality UI so that it is more user friendly, more logically organized, and doesn't have many widgets on the header bar. 
+
+==> v102
+
+----
+
+Remove the value "Acquired" from the list of valid values for a company status. Also, can you further enhance the filter UI so that only the valid status values for a selected type are shown. For example: If the selected type is "person", show only the statuses of "active" and "deceased" which are the current valid values for a person. If the selected type is "company", show only the statuses of "active" and "closed". If the selected type is "All", show all status values. For each type, provide a filter to show all statuses.
+
+==> v103, v104 (Export log) 
+
+----
+
+Do you think the following change in the UI would improve user experience:
+
+On the the home page, replace the two "Add Person" and "Add Company" buttons with a single "Add Contact" button. This opens up an "Add Contact" page that displays two radio buttons: "Add person" and "Add Company". Depending on which radio button the user chooses, the corresponding add form is displayed.
+
+Or do you have a better suggestion to improve the UI flow?
+
+==> 
+
+I think the current two-button approach is actually better UX than the proposed change. Here's my reasoning:
+Why the current design works well:
+
+    Fewer clicks — Users go directly to the form they need in one click (current) vs. two interactions (proposed: click button → select radio → form appears)
+    Clear intent — The two buttons make it immediately obvious what types of entries exist in the system
+    No ambiguity — There's no decision fatigue; users already know whether they're adding a person or company before they click
+
+Why the radio button approach would be worse:
+
+    Adds friction — An extra intermediary step for something users do frequently
+    Radio buttons feel "form-like" — Starting a creation flow with a meta-choice before the actual form feels indirect
+    No real simplification — Two buttons in a toolbar isn't cluttered; it's informative
+
+A better alternative if you want to simplify:
+
+If the goal is to reduce buttons in the action bar, a single "＋ Add" button with a small dropdown menu would be a good middle ground:
+
+    Click "＋ Add" → a compact 2-item dropdown appears: "👤 Person" / "🏢 Company"
+    Selecting an option goes directly to the form (same as today, but consolidated into one button)
+    This saves horizontal space while preserving the one-click-to-form efficiency
+
+This pattern is common in apps like Google Contacts, Notion, and CRMs — a single "New" button that fans out into entity type options.
+
+==> Let's keep it as is then.
+
+---
+
+The following are three similar recommendations that you made earlier. Can you synthesize them into one suggestion and describe it to me?
+
+1) Add selectable checkboxes to each entry card in the list view, enabling multi-select operations like bulk delete, bulk export (CSV or vCard), or bulk assign-to-household. Include a floating action bar that appears when entries are selected showing the available bulk operations. This would significantly speed up data management when working with many entries at once, especially after a large CSV import.
+
+2) Add checkboxes to the list view enabling multi-select with batch operations — such as bulk delete, bulk export (CSV), bulk status change, or assign-to-household. This becomes especially valuable as the directory grows and you need to archive or update several entries at once (e.g., marking multiple members of a household as 'moved away').
+
+3) Add the ability to select multiple entries and perform operations on them at once. Include checkbox selection on list cards with "Select All" / "Select None" toggle, bulk status change (e.g., mark multiple persons as deceased or multiple companies as closed), bulk vCard export for selected entries (combined into a single .vcf file), bulk delete with a single confirmation showing all affected entries and cascade effects, and selection that persists across pages so you can pick entries from different pages before acting.
+
+==> 
+
+Here's the synthesized suggestion:
+Bulk Actions with Multi-Select
+
+Add a multi-select mode to the directory list view that enables performing operations on multiple entries at once.
+
+Selection mechanics:
+
+    A "Select" toggle button activates multi-select mode, revealing checkboxes on each entry card
+    "Select All" / "Select None" controls for quick toggling
+    Selection persists across pages so you can pick entries from different pages before acting
+    A count badge shows how many entries are currently selected
+
+Floating action bar: When one or more entries are selected, a fixed action bar appears at the bottom of the screen with available bulk operations:
+Action	Description
+Bulk Delete	Single confirmation dialog listing all affected entries and their cascade effects (spouse unlinking, parent/child removal, household dissolution)
+Bulk Status Change	Change status for all selected entries (e.g., mark multiple persons as deceased, multiple companies as closed)
+Bulk Export	Export selected entries as a combined CSV or a single multi-contact .vcf file
+Bulk Assign to Household	Add all selected persons to a chosen household at once
+
+When it's most valuable:
+
+    After a large CSV import, quickly cleaning up or organizing newly imported records
+    Archiving or updating several related entries at once (e.g., a family that moved away, a batch of companies that closed)
+    Exporting a curated subset of contacts for sharing
+
+Would you like me to implement this feature?
+
+Yes
+
+==> v105
+
+---
+
+It doesn't look like you implemented the "Bulk Assign to Household" function. Can you do so?
+
+Bulk Assign to Household — Implementation
+Changes to components/BulkActions.tsx
+
+    Added Household type import and households + onBulkAssignHousehold props
+    Added a 🏠 Assign Household button in the floating action bar (only visible when persons are selected AND households exist)
+    Added a household picker dialog with:
+        Search input to filter households by name
+        Scrollable list of available households showing name and member count
+        Clicking a household triggers the assignment
+        Companies in the selection are noted as "will be skipped"
+        Cancel button to dismiss
+
+Changes to App.tsx
+
+    Added handleBulkAssignHousehold(personIds, householdId) handler that:
+        Removes each person from their previous household (with proper cleanup — dissolves households that drop below 2 members)
+        Adds each person to the target household's memberIds
+        Updates each person's householdId and syncs their primary address to the household address
+        Saves the updated household with all new members
+        Clears selection and reloads
+    Passed households and onBulkAssignHousehold props to BulkActionsBar
+
+==> v106
+
+---
+
+When doing a bulk household assignment, make sure that if a person is currently already in a household, remove the person from that household first then add them to the new household. A person can only belong to one household.
+
+==>
+That logic is actually already implemented! Looking at the handleBulkAssignHousehold handler in App.tsx, it already handles this case:
+
+For each person being assigned, it:
+
+    Checks if they're already in a different household
+    Removes them from the old household's memberIds
+    If the old household drops to 1 or fewer members, dissolves it entirely (converts remaining member's "Household" address label back to "Home" and clears their householdId)
+    If the old household still has 2+ members, saves it with the person removed (and reassigns primary contact if needed)
+    Then adds the person to the new household
+
+So a person can only ever belong to one household — the existing implementation already enforces this constraint correctly.
+
+
+
+I'm seeing an erratic behaviour in the following bulk-assign scenario:
+
+1) I select two persons from the Persons list. Both of them are already in a household but not primary members.
+2) I assign them to a new household.
+3) The first person's reassignment works correctly.
+4) The second person's reassignment has a problem:
+- The Person details page shows that he is still part of the old household.
+- The Edit Person page shows that he is part of the new household, which is correct.
+- The Household list page shows that he is part of both the old and the new family.
+- The Household Edit page for both the old and new families show that he is part of the household. 
+ 
+This is incorrect, the second person should only be part of the new household, not both.
+
+
+==> v107
+
+---
+
+For the "Assign household" and "Change status" bulk actions, display a confirmation dialog (similar to that for the "Delete" action), before you perform the action.  
+
+
+==> v108, v109 (Export Log)
+
+---
+
+Batch Household Creation from Selection
+
+Add a 'Create New Household' option at the top of the household picker dialog during bulk assign, so users can select 2–4 family members and create a new household directly from that selection. Include an inline name field and automatic primary contact selection, eliminating the need to navigate away, create the household separately, then come back to assign members.
+
+==> v110
+
+-----
+
+Can you add the address auto-complete feature to the "Create New Household" dialog in the bulk assign function?
+
+==> v111 (Export Log) - This is a GOOD version.
+
+----
+
+Inline Household Creation from the Person Form
+
+Add a '+ Create New' option inside the person form's Household Picker (where you select which household a person belongs to). This would let users create a household on-the-fly while editing a single person, rather than needing to navigate to the Households page or use multi-select mode. Use a similar flow to the existing 'Create New Household' from bulk actions.
+
+==> v112 - Bad Change 
+
+There are issues with the "Create New Household" function in the Person Form:
+
+- It allows you to create a household with only one member (the current person whose form is being edited/created). Instead, the function should allow you to search for a person to add, similar to the separate Create Household form. 
+- The resulting household does not have a primary contact. The primary contact should be the person whose form is being edited/created.
+
+This violates the rule that a household must have at least two members and a primary contact.
+
+==> Undo the last change (ability to create a new household in the Person form) and revert to the previous version of the app.
+
+==> v113
+----
+
+Print-Friendly Directory Export
+
+Add a '🖨 Print Directory' button that generates a clean, paginated HTML layout optimized for printing — organized alphabetically with section headers, showing name, photo, phone, email, and address in a compact card grid. This would be useful for church directories or office contact sheets that need to be distributed as physical printouts.
+
+
+==> v114
+-----
+
+Print Directory Customization Options
+
+Add a pre-download dialog for the print export that lets users choose what to include (persons only, companies only, or both), filter by status (active only vs. all), toggle profile photos on/off (smaller file size without images), and select layout density (compact single-column vs. spacious two-column) to make the printed output more flexible for different use cases like pocket-sized cards vs. wall posters.
+
+==> v115, v116 (Export log)
+
+-----
+
+
+- You indicated that you added a new upcomingBirthdays component, but I do not see it implemented in the app.
+
+----
+
+Household Directory Section in Print Export
+
+Add an optional 'Include Households' checkbox to the print dialog that appends a grouped view — each household as a card showing the family name, shared address, and all members listed together — to give printed directories a family-oriented structure that's especially useful for church directories where families are the primary unit.
+
+
+----
+
+
+----
+
+Stick Selection Summary with Entry Preview
+
+Add a collapsible 'Selection' panel (docked above the floating action bar or accessible via a chip count) that shows a compact list of all currently selected entries with quick-remove buttons (×). This helps users audit their selection before committing to a bulk action, reducing errors especially when selecting across paginated results.
+
+----
+
+Recently Viewed Quick-Access Bar
+
+Add a "Recently Viewed" quick-access bar that displays the last 5 entries viewed as small avatar chips (with profile image and name) pinned above the directory list. This saves time navigating back to entries you're actively working with, especially when cross-referencing relationships between multiple people or companies.
+
+----
+
+Notes with Timestamps & Pinning
+
+Replace the single free-text notes field with a timestamped notes system where each note entry is dated automatically. Allow pinning important notes to the top and optionally marking notes as "private" (visible only to the current user via private storage). This turns notes from a static field into a lightweight activity journal per contact.
+
+----
+
+Re-factor App.tsx into Smaller Modules
+
+Refactor the monolithic App.tsx file (over 1,700 lines) into smaller, more maintainable modules. Extract the save/delete/bulk handlers into a custom hook (e.g., useDirectoryActions), move each view (list, detail, person form, company form, import preview) into its own component file, and separate form state into dedicated hooks. This will improve maintainability, reduce cognitive load when making future changes, and lower the risk of stale-state bugs.
+
+----
+
+Undo/Toast Notifications for Bulk Actions
+
+Add a toast notification system that confirms bulk operations (e.g., '2 persons assigned to Smith Household') with a timed 'Undo' button. Currently, bulk operations like delete, status change, and household assignment execute silently with no feedback or ability to reverse. Implement a toast component that appears after each bulk action, shows what happened, and offers a brief window to undo the operation to reduce accidental data loss and improve user confidence.
+
+----
+
+Smart Search with Filters Inline
+
+Enhance the search bar to support typed queries like `type:person city:Austin` or `industry:tech status:active`, with autocomplete suggestions as users type. This would unify search and filtering into a single powerful input, reducing the need to open the filter panel for quick lookups and making the app feel more like a professional CRM tool.
+
+----
+
+Implement suggestion:
+
+Add checkboxes to the list view enabling multi-select with batch operations — such as bulk delete, bulk export (CSV), bulk status change, or assign-to-household. This becomes especially valuable as the directory grows and you need to archive or update several entries at once (e.g., marking multiple members of a household as 'moved away').
+
+----
+
+Implement suggestion:
+
+Add a 'Download vCard' button on the detail view that exports a single contact as a .vcf file. This is the universal standard for sharing contacts and would let you quickly import a directory entry into your phone, email client, or another address book. It should include name, phone, email, address (with Address Line 2), and respect the status field by noting deceased contacts in the vCard's NOTE field
+
+----
+
+Implement suggestion:
+
+Add a small section above the directory list showing contacts with birthdays in the next 7–14 days. This gives the directory a 'living dashboard' feel and makes it more useful for staying in touch. It should automatically exclude deceased entries, and could optionally note memorial dates for those recently passed.
+
+----
+
+Anniversary & Milestone Alerts
+
+Expand the birthday widget concept into a broader milestone notification system. Include upcoming wedding anniversaries (with milestone highlighting for 25th, 50th, etc.), membership/join date anniversaries if you track when someone was added, configurable 'days ahead' lookahead (7, 14, 30, 60 days), and a dedicated 'This Week' or 'This Month' summary panel combining birthdays, anniversaries, and other notable dates in a single timeline view.
+
+----
+
+Bulk Actions & Multi-Select
+
+Add the ability to select multiple entries and perform operations on them at once. Include checkbox selection on list cards with "Select All" / "Select None" toggle, bulk status change (e.g., mark multiple persons as deceased or multiple companies as closed), bulk vCard export for selected entries (combined into a single .vcf file), bulk delete with a single confirmation showing all affected entries and cascade effects, and selection that persists across pages so you can pick entries from different pages before acting.
+
+----
+
+Activity Log & Change History
+
+Track when entries are created, modified, or have their status changed. Record timestamp and summary for each change (e.g., "Status changed to Deceased", "Phone number updated"), show a "Last updated" timestamp on each card in the list view, include a collapsible "History" section in the detail view showing a chronological log of changes, allow sorting the directory by "Recently Modified" to quickly find entries you've been working on, and make it useful for multi-user directories where you need to see what others have changed.
+
+----
+
+Contact Activity Timeline
+
+Add an activity log to each entry that tracks changes (e.g., "Address updated", "Added to Household", "Status changed to Deceased") with timestamps. This would give users a history of modifications per contact, helping them understand when and how records evolved — especially useful for shared directories where multiple people may edit entries.
+
+----
+
+Keyboard Shortcuts & Accessiblity
+
+Add keyboard shortcuts for common actions (e.g., `N` for new person, `/` to focus search, `Esc` to go back) and improve accessibility with proper ARIA labels, focus management, and screen reader support throughout the app. This would make the directory much faster to navigate for power users and more inclusive for all users.
+
+----
+
+Saved Filter Presets
+
+Add a saved filter presets feature that allows users to save frequently used filter combinations (e.g., 'Closed companies in Tech', 'Deceased persons') as named presets that appear as quick-access buttons above the filter bar. This would let power users with large directories jump between common views instantly without re-configuring filters each time.
+
+-----
+
+Entry Last-Modified Timestamps & Recently Updated Sort
+
+Track and display when each entry was last modified, and add a 'Recently Updated' sort option. This would help users quickly find entries they or others recently changed — especially useful after a CSV import or when maintaining a shared directory where multiple people make edits.
+
+
+---
+
+Undo/Toast Notifications for Actions
+
+After significant actions complete (saving a person, creating a household, bulk operations, deleting entries), add a brief toast notification that appears at the bottom of the screen (e.g., "✓ John Smith saved" or "✓ Created 'The Smith Family'") with auto-dismiss after 3–4 seconds to provide immediate feedback without interrupting workflow.
+
+===================
+
+Add a separate "Households" view to manage households. This view shows the list of available households and allows the following actions:
+
+1) Create a new household. A household has a name and an address which are both required.
+
+2) Add a household member. A household must have at least two members. One of the household members must be a primary contact. A household has one and only one primary contact.
+
+3) Remove a household member according the following rules:
+
+A) If the member is the primary contact, another member must be selected to be the primary contact.
+
+B) If this is the last member, change the address type of the primary address of all members from "Household" to "Home" before removing the member. This ensures that the "disconnected" member still has a primary address.
+
+C) In all cases, present a confirmation dialog that describes what the delete action will do.
+
+4) Change household address. If the address is changed, make sure to synchronize the primary address of all of the members.
+
+5) Delete a household. This removes all household members according to action 3) and then deletes the household. Present a confirmation dialog that describes what the delete action will do.
+
+Additional requirements:
+
+- When a household is saved (not deleted), keep its address in sync with the members' primary address. If necessary, update (or add) the primary address of all of its members with the household address and an address type of "Household". All household addresses have a type of "Household" in each member's primary address.
+
+- On the Person Edit form, remove the "Household Members" section and add a new section named "Household Membership". This new section displays the person's current household name and members. If the person is not part of a household, it allows the user to assign a household to the person. It uses a search box that lists the available households by name. When a name is selected, this has the same effect as adding the person to the household. The user can leave the household membership blank if the person does not belong to a household, and this has the same effect as removing the person from a household.
+
+- In all person and household management actions, make sure that there are no unresolved or dangling references between Persons and Households.
+
+----------
+
+====================
+
+Suggestions:
+
+====================
+Auto-archive with configurable retention period
+
+Add an auto-archive feature for deceased entries with a configurable retention period. Include a settings panel where users choose the retention period (e.g., 90 days, 6 months, or 1 year after date of death), a visual countdown or 'days remaining' indicator on deceased entries, a separate 'Archived' view to browse past entries for historical reference, and an option to manually restore an archived entry back to active/deceased status.
+
+
+--------
+
+Directory Analytics Dashboard
+
+Add a summary analytics dashboard at the top of or alongside the list view with quick insights about the directory. Include total contacts breakdown (persons vs. companies, active vs. deceased), age distribution chart (members in each decade), geographic heatmap or breakdown by state/city, household size distribution, upcoming anniversary milestones (e.g., 25th, 50th wedding anniversaries), and growth over time (new entries per month). This gives directory administrators a bird's-eye view without needing to export data to a spreadsheet.
+
+
+-----
+
+Tags & Custom Groups
+
+Add a flexible tagging and grouping system beyond the existing type and household structures. Include free-form tags on any entry (e.g., 'choir', 'youth group', 'volunteer', 'board member', 'small group A'), the ability to filter the directory by one or more tags, bulk-email list generation that selects a tag and exports all email addresses in that group for newsletter tools, and tag-based views/tabs for quick access to commonly used groups. This is especially useful for church or organization directories where people belong to multiple overlapping groups that don't map neatly to households or companies.
+
+---------
+
+Add a light/dark theme toggle in the header that persists across sessions using private storage. Dark mode would reduce eye strain for users managing their directory in low-light environments and demonstrate the app's use of user-specific preferences.
+
+-------
+
+When sorted by name, group entries under sticky letter headers (A, B, C…) with a compact clickable letter index along the side for instant scrolling to a specific section. This would complement pagination by making it easier to locate contacts within a page.
+
+------------
+
+Add small icon buttons (📧 email, 📞 call, 📋 copy address) that appear on hover over each entry card in the list view. Clicking them would open the user's email client, phone dialer, or copy the primary address to clipboard — all without navigating into the detail view first.
+
+-------------
+
+Add a compact section above the directory list showing persons with birthdays in the next 14 days, sorted by nearest date. Each entry would display the person's name, profile image, and days until their birthday, making the directory proactively useful for planning greetings or celebrations.
+
+Display a compact 'Upcoming Birthdays' section above the directory list showing persons with birthdays in the next 30 days. Each entry should show the person's profile image, name, birthday date, and a countdown (e.g., 'in 3 days'). Clicking an entry should navigate to their detail view. This makes the directory proactively useful rather than purely a lookup tool.
+
+-------------
+
+Add a "Download vCard" button on the detail view that exports the person or company as a .vcf file. This standard format can be directly imported into phone contacts, Outlook, or other address book applications, making it easy to transfer directory information to personal devices.
+
+-------
+
+Add selectable checkboxes to each entry card in the list view, enabling multi-select operations like bulk delete, bulk export (CSV or vCard), or bulk assign-to-household. Include a floating action bar that appears when entries are selected showing the available bulk operations. This would significantly speed up data management when working with many entries at once, especially after a large CSV import.
